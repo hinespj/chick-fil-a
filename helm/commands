@@ -1,5 +1,60 @@
 To deploy with Helm:
 helm install chick-fil-a --repo https://cprice-ping.github.io/helm-charts ping-facile -f chick-fil-a.yaml
 
+helm install seipoc --repo https://cprice-ping.github.io/helm-charts ping-sample-ciam -f seipoc.yaml
+
 Once Deployed, you can access a Dashboard at:
 https://facile.pingidentity.cloud/dashboard/chick-fil-a
+
+
+helm uninstall chick-fil-a
+PVCs: kubectl delete pvc --selector=app.kubernetes.io/instance=chick-fil-a
+PingOne: Delete the Admin SSO - chick-fil-a applications (Connections --> Applications)
+
+
+
+git add .
+git commit -m "Add new files"
+git push
+
+
+This chart installs a CIAM Solution stack of Ping products.
+
+Enabled Capabilities:
+Unified Administration, Data Store, Authentication Authority, Dynamic Authorization, Multi Factor Service, Adaptive Authentication, Identity Verification
+
+Enabled Use Cases:
+CIBA, Consent Management, Delegated Administration, Social Connections, Unified User Profiles, PingVerify Demo Env
+
+Environment Name: chick-fil-a
+
+Dashboard: https://facile.pingidentity.cloud/dashboard/chick-fil-a
+
+Product Consoles:
+Unified Admin:       https://console.pingone.com?env=2d4b9e62-21b2-4de9-9871-ff5fc712e42b#/home?nav=home
+
+PingData:      https://pingdataconsole-chick-fil-a.ping-devops.com
+PingFederate:  https://pingfederate-admin-chick-fil-a.ping-devops.com/pingfederate
+Delegator:     https://chick-fil-a.ping-devops.com/delegator/
+
+Delegated Administration:
+Documentation can be found at: https://github.com/cprice-ping/Profile-DelAdmin
+
+External Hostname:
+chick-fil-a.ping-devops.com
+
+Authentication Policy Samples:SAML (Verify): https://chick-fil-a.ping-devops.com/idp/startSSO.ping?PartnerSpId=Sample-Verify
+SAML (Single_Factor): https://chick-fil-a.ping-devops.com/idp/startSSO.ping?PartnerSpId=Sample-SAML
+OIDC (Multi_Factor):  https://chick-fil-a.ping-devops.com/as/authorization.oauth2?response_type=code&client_id=PingLogon&redirect_uri=https://decoder.pingidentity.cloud/oidc&scope=openid%20profile
+Logoff: https://chick-fil-a.ping-devops.com/idp/startSLO.ping
+
+Profile Management:
+https://chick-fil-a.ping-devops.com/pf/idprofile.ping?LocalIdentityProfileID=regIdentityProfile
+
+Sample Users:
+user.[0-4] | 2FederateM0re
+
+OIDC Decoder Info:
+Issuer:        https://chick-fil-a.ping-devops.com
+Client ID:     PingLogon
+Client Secret: 2FederateM0re
