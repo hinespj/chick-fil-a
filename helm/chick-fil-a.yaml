@@ -1,0 +1,101 @@
+global:
+  envs:
+    USER_BASE_DN: dc=sampleCiam.com
+    ENVIRONMENT_NAME: chick-fil-a
+    DOMAIN_NAME: ping-devops.com
+    IP_ADDRESS: 47.18.186.248
+  labels:
+    facile.pingidentity.cloud/admin-env-id: 2d4b9e62-21b2-4de9-9871-ff5fc712e42b
+    facile.pingidentity.cloud/admin-user-id: 779ec14a-7f7c-4d96-9761-c97c0af39c3f
+  annotations:
+    facile.pingidentity.cloud/admin-env-id: 2d4b9e62-21b2-4de9-9871-ff5fc712e42b
+    facile.pingidentity.cloud/admin-user-id: 779ec14a-7f7c-4d96-9761-c97c0af39c3f
+pingOne:
+  envRegion: NA
+  administration:
+    useMyPing: true
+    envId: 2d4b9e62-21b2-4de9-9871-ff5fc712e42b
+    adminUserId: 779ec14a-7f7c-4d96-9761-c97c0af39c3f
+    workerApp:
+      id: 47df2408-3868-40c3-a317-af137b719fe0
+      secret: tsSTXnqYABC3V1TQ3a6KFY8Exau~75az1yoNz9lxB-F3rant1yvjyUM2-e73sdrn
+    pfLogonApp:
+      id: aeb4f7c3-5444-4b5a-99ca-16b71fe50472
+      secret: 6~Lb_p_I_Jiogy2Xh4NQhJyb~etUVNUMBMRuf_sr~POWsB1zxof4LPs.hgg1K5XG
+    paLogonApp:
+      id: effc6239-10d3-4acc-aaad-d18103b04790
+      secret: lkh_u.ZIb1L6h.fiYJCaOQHFjcl~Wqh06aW7eae7cIKDuba~S~DfWOFTzTcv15GE
+    pdLogonApp:
+      id: effc6239-10d3-4acc-aaad-d18103b04790
+      secret: lkh_u.ZIb1L6h.fiYJCaOQHFjcl~Wqh06aW7eae7cIKDuba~S~DfWOFTzTcv15GE
+    pazLogonApp:
+      id: 24177c6d-0937-473b-b35c-0321ea37ef8f
+      secret: q78-beoxL-3Yylbnz-VEmDiVKS0Vc8qR9d6jj_4lRr5jfi36rl1fAvb1kmJkuucR
+usePingConfig:
+  enabled: true
+baseline:
+  directory:
+    enabled: true
+capabilities:
+  authenticationAuthority:
+    enabled: true
+  multiFactorAuthentication:
+    enabled: true
+  accessManager:
+    enabled: false
+  authorize:
+    enabled: true
+  risk:
+    enabled: true
+  verify:
+    enabled: true
+useCases:
+  ciba:
+    enabled: true
+  consentManagement:
+    enabled: true
+  delegatedAdministration:
+    enabled: true
+  accessControl:
+    enabled: false
+  scim:
+    enabled: false
+  socialConnections:
+    enabled: true
+  userProfiles:
+    enabled: true
+  verifyDemoEnv:
+    enabled: true
+ping-devops:
+  pingfederate-admin:
+    enabled: true
+     envs:
+      SERVER_PROFILE_URL: https://github.com/hinespj/chick-fil-a.git
+      SERVER_PROFILE_PATH: pingfederate
+      SERVER_PROFILE_BRANCH: main
+  pingfederate-engine:
+    enabled: true
+    envs:
+      SERVER_PROFILE_URL: https://github.com/hinespj/chick-fil-a.git
+      SERVER_PROFILE_PATH: pingfederate
+      SERVER_PROFILE_BRANCH: main
+      TAIL_LOG_FILES: /opt/out/instance/log/audit.log /opt/out/instance/log/server.log
+      PF_LOG_LEVEL: DEBUG
+  pingdirectory:
+    enabled: true
+  pingdatasync:
+    enabled: true
+  pingaccess-admin:
+    enabled: false
+  pingaccess-engine:
+    enabled: false
+    envs:
+      PA_LOG_LEVEL: DEBUG
+  pingauthorize:
+    enabled: true
+  pingauthorizepap:
+    enabled: true
+  pingdelegator:
+    enabled: true
+  pingdataconsole:
+    enabled: true

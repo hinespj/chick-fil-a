@@ -1,0 +1,5 @@
+To deploy with Helm:
+helm install chick-fil-a --repo https://cprice-ping.github.io/helm-charts ping-facile -f chick-fil-a.yaml
+
+Once Deployed, you can access a Dashboard at:
+https://facile.pingidentity.cloud/dashboard/chick-fil-a
