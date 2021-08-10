@@ -1,27 +1,18 @@
 To deploy with Helm:
 helm install chick-fil-a --repo https://cprice-ping.github.io/helm-charts ping-facile -f chick-fil-a.yaml
 
-helm install seipoc --repo https://cprice-ping.github.io/helm-charts ping-sample-ciam -f seipoc.yaml
-
-Once Deployed, you can access a Dashboard at:
-https://facile.pingidentity.cloud/dashboard/chick-fil-a
-
-
 helm uninstall chick-fil-a
 PVCs: kubectl delete pvc --selector=app.kubernetes.io/instance=chick-fil-a
 PingOne: Delete the Admin SSO - chick-fil-a applications (Connections --> Applications)
 
+
+Dashboard: https://facile.pingidentity.cloud/dashboard/chick-fil-a
 
 
 git add .
 git commit -m "Add new files"
 git push
 
-
-This chart installs a CIAM Solution stack of Ping products.
-
-Enabled Capabilities:
-Unified Administration, Data Store, Authentication Authority, Dynamic Authorization, Multi Factor Service, Adaptive Authentication, Identity Verification
 
 Enabled Use Cases:
 CIBA, Consent Management, Delegated Administration, Social Connections, Unified User Profiles, PingVerify Demo Env
